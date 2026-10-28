@@ -1,8 +1,11 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#081421"><title>Skills | Explore Air Brake System</title><style>
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#081421;color:#fff;font-family:system-ui,Arial}
-.model{position:relative;width:100%;min-height:100vh;min-height:100dvh;background:#081421}
-.bus{display:block;width:100%;height:auto;object-fit:contain}
-.back{position:fixed;top:max(12px,env(safe-area-inset-top));left:12px;z-index:3;text-decoration:none;background:rgba(9,22,36,.82);color:#fff;border:1px solid #ffffff55;padding:10px 14px;border-radius:12px;font-size:14px;font-weight:700;backdrop-filter:blur(8px)}
-.back:focus-visible{outline:3px solid #e6b75e}
-@media(orientation:landscape){.bus{width:100%;max-height:100dvh;object-fit:contain}}
-</style></head><body><main class="model"><a class="back" href="./">← Cockpit</a><img class="bus" src="air-brake-bus-background.png" alt="Conceptual school bus cutaway with visible air brake components"></main></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#081421"><title>Skills | Explore Air Brake System</title><style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#081421;color:#fff;font-family:system-ui,Arial}
+.viewport{width:100%;height:100vh;height:100dvh;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:#081421}
+.viewport::-webkit-scrollbar{display:none}
+.track{height:100%;width:max-content;min-width:100%;display:flex;align-items:center;justify-content:center}
+.bus{display:block;height:100%;width:auto;max-width:none;object-fit:contain;user-select:none;-webkit-user-drag:none}
+.back{position:fixed;top:max(12px,env(safe-area-inset-top));left:12px;z-index:3;text-decoration:none;background:rgba(9,22,36,.86);color:#fff;border:1px solid #ffffff55;padding:10px 14px;border-radius:12px;font-size:14px;font-weight:700;backdrop-filter:blur(8px)}
+.hint{position:fixed;bottom:max(20px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);pointer-events:none;background:rgba(9,22,36,.82);padding:8px 14px;border-radius:999px;font-size:12px;color:#e5e9ee;white-space:nowrap}
+@media(min-width:850px){.track{width:100%}.bus{width:100%;height:100%;object-fit:contain}.hint{display:none}}
+@media(orientation:landscape){.hint{display:none}}
+</style></head><body><a class="back" href="./">← Cockpit</a><main class="viewport" aria-label="Swipe horizontally to explore the school bus air brake model"><div class="track"><img class="bus" src="air-brake-bus-background.png" alt="Conceptual school bus cutaway showing air brake components" draggable="false"></div></main><div class="hint">← Swipe to explore the bus →</div></body></html>
