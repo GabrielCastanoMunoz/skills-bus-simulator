@@ -120,7 +120,7 @@ art.querySelectorAll(".hot").forEach(node=>{
  node.addEventListener("click",select);
  node.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();select()}})
 });
-s.parts.forEach(([name,description],j)=>{const button=document.createElement("button");button.className="component";button.textContent=name;button.onclick=()=>{components.querySelectorAll(".component").forEach(el=>el.classList.remove("active"));button.classList.add("active");diagram.querySelectorAll(".hot").forEach((n,k)=>n.classList.toggle("active",k===j))explain.textContent=description};components.appendChild(button)});components.firstChild.click();buildSim(i);dialog.classList.add("open");document.body.style.overflow="hidden";close.focus()}
+s.parts.forEach(([name,description],j)=>{const button=document.createElement("button");button.className="component";button.textContent=name;button.onclick=()=>{components.querySelectorAll(".component").forEach(el=>el.classList.remove("active"));button.classList.add("active");diagram.querySelectorAll(".hot").forEach((n,k)=>n.classList.toggle("active",k===j));explain.textContent=description};components.appendChild(button)});components.firstChild.click();buildSim(i);dialog.classList.add("open");document.body.style.overflow="hidden";close.focus()}
 function hide(){stopSim();engineOn=false;stopEngineAudio();dialog.classList.remove("open");document.body.style.overflow="";if(lastFocus)lastFocus.focus()}
 close.onclick=hide;dialog.addEventListener("click",e=>{if(e.target===dialog)hide()});document.addEventListener("keydown",e=>{if(e.key==="Escape"&&dialog.classList.contains("open"))hide()});
 
