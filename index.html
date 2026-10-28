@@ -5,11 +5,11 @@
 .road-surface{position:absolute;inset:0;background:#101827 url('school-bus-cockpit.png') center center/cover no-repeat;opacity:0;transform-origin:50% 24%}
 .road-demo.moving .road-surface{opacity:1;animation:busForwardView 12s linear 1 forwards}
 @keyframes busForwardView{from{transform:scale(1.015) translateY(0)}to{transform:scale(1.24) translateY(1%)}}
-.road-dashes{display:none;position:absolute;left:40.2%;top:20.5%;width:1.2%;height:14%;overflow:hidden;opacity:0;transform:perspective(160px) rotateX(28deg);transform-origin:top center;background:repeating-linear-gradient(to bottom,rgba(255,235,167,.9) 0 9px,transparent 9px 30px);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 85%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 85%,transparent 100%)}
+.road-dashes{display:none;position:absolute;left:33%;top:20.5%;width:1.2%;height:14%;overflow:hidden;opacity:0;transform:perspective(160px) rotateX(28deg);transform-origin:top center;background:repeating-linear-gradient(to bottom,rgba(255,235,167,.9) 0 9px,transparent 9px 30px);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 85%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 85%,transparent 100%)}
 .road-demo.moving .road-dashes{display:block;opacity:.85;animation:streetLinesForward .55s linear infinite}
 @keyframes streetLinesForward{from{background-position:0 0}to{background-position:0 30px}}
 .road-demo.pull-left .road-dashes,.road-demo.pull-right .road-dashes{display:none}
-@media(max-width:650px){.road-dashes{left:40.2%;top:20.5%;width:1.2%;height:14%}}
+@media(max-width:650px){.road-dashes{left:33%;top:20.5%;width:1.2%;height:14%}}
 .road-speed{position:absolute;top:13%;right:20%;background:#101b2ce8;color:#fff;padding:5px 9px;border-radius:7px;font-size:13px;font-weight:800}
 .road-demo.pull-left .road-surface{opacity:1;transform:translateX(-2%);animation:none}
 .road-demo.pull-right .road-surface{opacity:1;transform:translateX(2%);animation:none}
