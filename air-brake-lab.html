@@ -109,12 +109,28 @@ function labSvg(i){
  const pipe=(d,color="#58c6e9")=>'<path d="'+d+'" fill="none" stroke="'+color+'" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/><path class="flow" d="'+d+'" fill="none" stroke="#e1faff" stroke-width="3" stroke-dasharray="5 17"/>';
  let body='';
  if(i===1){
- body+=pipe('M80 99 H210 V110 H287 M210 110 V258 H287');
+ body+=pipe('M180 100 H215 V146 H288 M215 146 V296 H288');
  body+=pipe('M448 146 H518 V200 H564 M448 296 H518 V200', '#e5bd70');
  body+=hot(0,tank(25,62,155)+label(20,18,167,'Supply reservoir')+'<rect class="hit" x="20" y="58" width="166" height="90" rx="15"/>');
  body+=hot(1,tank(288,108,161)+label(282,62,176,'Primary reservoir')+'<rect class="hit" x="282" y="105" width="174" height="86" rx="15"/>');
  body+=hot(2,tank(288,258,161)+label(282,213,188,'Secondary reservoir')+'<rect class="hit" x="282" y="254" width="174" height="90" rx="15"/>');
- body+=hot(3,'<path d="M196 91 L212 75 228 91 212 107Z M196 245 L212 229 228 245 212 261Z" fill="#d4b66c" stroke="#fff1c7" stroke-width="3"/>'+label(115,173,175,'Check valves')+'<rect class="hit" x="185" y="65" width="55" height="207" rx="10"/>');
+ // Two inline one-way valves: cylindrical housings, directional seat and spring.
+ // Illustrative cross sections, not an exact OEM valve arrangement.
+ const oneWay=(y)=>'<g transform="translate(223 '+(y-22)+')">'+
+ '<rect x="-5" y="6" width="70" height="34" rx="12" fill="url(#steel)" stroke="#c7d9e0" stroke-width="3"/>'+
+ '<rect x="-9" y="12" width="12" height="22" rx="3" fill="#9fb5c2" stroke="#dae8ec" stroke-width="2"/>'+
+ '<rect x="58" y="12" width="12" height="22" rx="3" fill="#9fb5c2" stroke="#dae8ec" stroke-width="2"/>'+
+ '<path d="M10 23 H23" stroke="#193747" stroke-width="5" stroke-linecap="round"/>'+
+ '<path d="M23 13 L34 23 L23 33Z" fill="#f4cb75" stroke="#fff0b8" stroke-width="1.5"/>'+
+ '<path d="M35 11 V35" stroke="#173447" stroke-width="5"/>'+
+ '<path d="M40 23 l4 -8 4 16 4 -16 4 8" stroke="#d7b96d" stroke-width="2.5" fill="none"/>'+
+ '<path d="M10 23 H19" stroke="#9fe4fa" stroke-width="3" stroke-linecap="round"/>'+
+ '</g>';
+ body+=hot(3,oneWay(146)+oneWay(296)+label(120,195,170,'One-way check valves')+
+ '<path d="M205 211 H213 V146 M213 211 V296" stroke="#d9b76e" stroke-width="2.5" fill="none" stroke-dasharray="4 5"/>'+
+ '<rect class="hit" x="211" y="114" width="89" height="65" rx="10"/>'+
+ '<rect class="hit" x="211" y="263" width="89" height="65" rx="10"/>'+
+ '<rect class="hit" x="120" y="192" width="170" height="41" rx="10"/>');
  body+=hot(4,'<path d="M362 337v26 M362 363l-15 14h30Z M102 139v24" stroke="#d7ba78" stroke-width="9"/>'+label(264,365,188,'Drain valves')+'<rect class="hit" x="339" y="335" width="56" height="60" rx="8"/>');
  body+='<text class="sub" x="532" y="236">To protected circuits</text>';
  }else if(i===2){
