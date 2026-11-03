@@ -1,0 +1,18 @@
+{
+  "name": "Skills Bus Simulator",
+  "short_name": "Bus Simulator",
+  "description": "Interactive CDL school bus and air brake training simulator",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#14263b",
+  "theme_color": "#14263b",
+  "icons": [
+    {
+      "src": "school-bus-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
